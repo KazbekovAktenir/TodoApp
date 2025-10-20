@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 public class TaskDatabaseHelper extends SQLiteOpenHelper {
 
@@ -38,12 +39,14 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void addTask(String title, String description) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_TITLE, title);
-        values.put(COLUMN_DESCRIPTION, description);
-        db.insert(TABLE_TASKS, null, values);
-        db.close();
+        try (SQLiteDatabase db = this.getWritableDatabase()) {
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_TITLE, title);
+            values.put(COLUMN_DESCRIPTION, description);
+            db.insert(TABLE_TASKS, null, values);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public Cursor getAllTasks() {
@@ -52,17 +55,20 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void deleteTask(int id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_TASKS, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
-        db.close();
+        try (SQLiteDatabase db = this.getWritableDatabase()) {
+            db.delete(TABLE_TASKS, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void updateTaskStatus(int id, int status) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_STATUS, status);
-        db.update(TABLE_TASKS, values, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
-        db.close();
+        try (SQLiteDatabase db = this.getWritableDatabase()) {
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_STATUS, status);
+            db.update(TABLE_TASKS, values, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
-

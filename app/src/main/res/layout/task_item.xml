@@ -5,7 +5,7 @@
     android:padding="12dp"
     android:background="?android:attr/selectableItemBackground">
 
-    <!-- Заголовок задачи -->
+    <!--заголовок задачи -->
     <TextView
         android:id="@+id/task_title"
         android:layout_width="0dp"
@@ -17,7 +17,7 @@
         android:ellipsize="end"
         android:maxLines="1" />
 
-    <!-- Статус задачи (выполнена/невыполнена) -->
+    <!--статус задачи (выполнена/невыполнена) -->
     <CheckBox
         android:id="@+id/task_status"
         android:layout_width="wrap_content"

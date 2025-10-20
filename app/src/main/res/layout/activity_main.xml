@@ -4,17 +4,17 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Кнопка добавления задачи -->
+    <!--кнопка добавления задачи -->
     <Button
         android:id="@+id/add_task_button"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:text="Добавить задачу"
-        android:backgroundTint="@color/primaryColor"
+        android:backgroundTint="@color/orange"
         android:textColor="@android:color/white"
         android:layout_marginBottom="16dp" />
 
-    <!-- Список задач -->
+    <!--список задач -->
     <ListView
         android:id="@+id/task_list"
         android:layout_width="match_parent"

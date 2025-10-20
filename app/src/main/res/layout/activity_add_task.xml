@@ -4,37 +4,37 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Поле ввода заголовка задачи -->
+    <!--поле ввода заголовка задачи -->
     <EditText
         android:id="@+id/task_title_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Заголовок задачи"
         android:padding="12dp"
-        android:backgroundTint="@color/primaryColor"
+        android:backgroundTint="@color/orange"
         android:layout_marginBottom="16dp"
         android:importantForAccessibility="yes"
         android:inputType="text" />
 
-    <!-- Поле ввода описания задачи -->
+    <!--поле ввода описания задачи -->
     <EditText
         android:id="@+id/task_description_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Описание задачи"
         android:padding="12dp"
-        android:backgroundTint="@color/primaryColor"
+        android:backgroundTint="@color/orange"
         android:layout_marginBottom="16dp"
         android:importantForAccessibility="yes"
         android:inputType="textMultiLine" />
 
-    <!-- Кнопка для сохранения задачи -->
+    <!--кнопка для сохранения задачи -->
     <Button
         android:id="@+id/save_task_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Сохранить"
-        android:backgroundTint="@color/primaryColor"
+        android:backgroundTint="@color/orange"
         android:textColor="@android:color/white"
         android:layout_marginTop="16dp" />
 
